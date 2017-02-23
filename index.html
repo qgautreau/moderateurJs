@@ -10,13 +10,18 @@
 </head>
 <body>
     <textarea name="name" rows="8" cols="80" id="text"></textarea>
-    <button type="button" name="button" onclick="moderer();">Modérer</button>
+    <button type="button" name="button" id="modo">Modérer</button>
     <span>Résultat</span>
     <div id="resultat">
     </div>
     <script>
         $(document).ready(function(){
-            
+            $("#modo").click(function(){
+                $("#text").text(function () {
+                    var texte = return $(this).text().replace("/[:;xX=][\(\)\-\\/'OpD@]+/g", "--");
+                    $("#resultat").innerHTML(texte);
+                });
+            });​​​​​
         });
     </script>
 </body>
